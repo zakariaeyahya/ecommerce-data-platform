@@ -6,7 +6,7 @@ Une plateforme complète d'analyse de données e-commerce avec segmentation IA e
 
 ```bash
 # Cloner le projet
-git clone <your-repo-url>
+git clone [<your-repo-url>](https://github.com/zakariaeyahya/ecommerce-data-platform.git)
 cd ecommerce-data-platform
 
 # Démarrer avec Docker
