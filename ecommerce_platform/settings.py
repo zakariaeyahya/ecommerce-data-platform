@@ -54,8 +54,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_DB', 'coding_challenge_data'),
         'USER': os.environ.get('POSTGRES_USER', 'postgres'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
-        # CHANGEMENT CRITIQUE : utilise le nom du service Docker au lieu de localhost
-        'HOST': os.environ.get('DB_HOST', 'postgres'),  # 'postgres' est le nom du service
+        'HOST': os.environ.get('DB_HOST', 'postgres'), 
         'PORT': os.environ.get('DB_PORT', '5432'),      # Port interne du conteneur
         'OPTIONS': {
             'client_encoding': 'UTF8',
@@ -63,15 +62,6 @@ DATABASES = {
         'CONN_MAX_AGE': 0,
     }
 }
-
-# Configuration alternative avec URL complète (recommandée)
-# import dj_database_url
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.environ.get('DATABASE_URL', 
-#             'postgresql://postgres:password@postgres:5432/coding_challenge_data')
-#     )
-# }
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
