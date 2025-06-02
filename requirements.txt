@@ -1,0 +1,16 @@
+Django
+djangorestframework
+psycopg2-binary
+pandas
+matplotlib
+seaborn
+elasticsearch
+django-elasticsearch-dsl
+faker
+sqlalchemy
+flask
+umap-learn
+scikit-learn
+numpy
+scipy
+sentence-transformers

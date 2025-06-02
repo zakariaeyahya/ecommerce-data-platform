@@ -1,0 +1,12 @@
+# Ignore l'environnement virtuel (venv)
+venv/
+
+# Ignore tous les dossiers __pycache__ partout dans le projet
+__pycache__/
+**/__pycache__/
+
+# Ignore tous les fichiers compilés Python
+*.pyc
+
+# Ignore le dossier migrations du data_generator (chemin relatif à la racine du repo)
+ecommerce-data-platform/ecommerce-data-platform/data_generator/migrations/

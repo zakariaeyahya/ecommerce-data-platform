@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "total_users_segmented": 500,
+    "number_of_segments": 5,
+    "segmentation_quality": {
+      "silhouette_score": 0.7484470155806308,
+      "calinski_harabasz_score": 1608.6661681727862,
+      "inertia": 8.358262204284737
+    },
+    "largest_segment": "Home Improvers",
+    "most_confident_segment": "Tech Browsers"
+  },
+  "segments": [
+    {
+      "segment_id": "1",
+      "segment_name": "Home Improvers",
+      "size": 110,
+      "percentage": 22.0,
+      "confidence_score": 0.895,
+      "characteristics": {
+        "avg_search_frequency": 0.23200000000000004,
+        "avg_avg_session_duration": 197.69454545454548,
+        "avg_click_through_rate": 0.5701090909090909,
+        "avg_conversion_rate": 0.10659999999999999,
+        "avg_engagement_score": 0.29200363636363635,
+        "category_preferences": {
+          "home": 1.0
+        },
+        "price_sensitivity": "low"
+      },
+      "top_search_queries": [
+        "lighting",
+        "kitchen appliances",
+        "furniture",
+        "bedding",
+        "home decor"
+      ],
+      "insights": [
+        "Engagement limité, potentiel d'amélioration",
+        "Forte préférence pour home",
+        "Peu sensible aux prix, potentiel pour produits premium"
+      ]
+    },
+    {
+      "segment_id": "3",
+      "segment_name": "Fashion Explorers",
+      "size": 103,
+      "percentage": 20.6,
+      "confidence_score": 0.896,
+      "characteristics": {
+        "avg_search_frequency": 0.2424271844660194,
+        "avg_avg_session_duration": 240.2592233009709,
+        "avg_click_through_rate": 0.5842621359223301,
+        "avg_conversion_rate": 0.0963495145631068,
+        "avg_engagement_score": 0.29151456310679613,
+        "category_preferences": {
+          "clothing": 1.0
+        },
+        "price_sensitivity": "low"
+      },
+      "top_search_queries": [
+        "luxury handbag",
+        "trendy shoes",
+        "jewelry",
+        "designer dress",
+        "summer fashion"
+      ],
+      "insights": [
+        "Engagement limité, potentiel d'amélioration",
+        "Forte préférence pour clothing",
+        "Peu sensible aux prix, potentiel pour produits premium"
+      ]
+    },
+    {
+      "segment_id": "0",
+      "segment_name": "Tech Browsers",
+      "size": 100,
+      "percentage": 20.0,
+      "confidence_score": 0.898,
+      "characteristics": {
+        "avg_search_frequency": 0.2511,
+        "avg_avg_session_duration": 117.83,
+        "avg_click_through_rate": 0.5068400000000001,
+        "avg_conversion_rate": 0.07619999999999999,
+        "avg_engagement_score": 0.24845600000000004,
+        "category_preferences": {
+          "electronics": 1.0,
+          "clothing": 1.0,
+          "home": 1.0
+        },
+        "price_sensitivity": "high"
+      },
+      "top_search_queries": [
+        "best price",
+        "discount",
+        "sale",
+        "cheap laptop",
+        "affordable"
+      ],
+      "insights": [
+        "Engagement limité, potentiel d'amélioration",
+        "Forte préférence pour electronics",
+        "Très sensible aux prix, privilégier les promotions"
+      ]
+    },
+    {
+      "segment_id": "2",
+      "segment_name": "Tech Browsers",
+      "size": 94,
+      "percentage": 18.8,
+      "confidence_score": 0.888,
+      "characteristics": {
+        "avg_search_frequency": 0.2370212765957447,
+        "avg_avg_session_duration": 181.3382978723404,
+        "avg_click_through_rate": 0.6794787234042553,
+        "avg_conversion_rate": 0.15963829787234038,
+        "avg_engagement_score": 0.3675744680851063,
+        "category_preferences": {
+          "electronics": 1.0
+        },
+        "price_sensitivity": "low"
+      },
+      "top_search_queries": [
+        "wireless headphones",
+        "bluetooth speaker",
+        "smartwatch",
+        "tablet",
+        "gaming laptop"
+      ],
+      "insights": [
+        "Taux de conversion élevé",
+        "Forte préférence pour electronics",
+        "Peu sensible aux prix, potentiel pour produits premium"
+      ]
+    },
+    {
+      "segment_id": "4",
+      "segment_name": "Active Lifestyle",
+      "size": 93,
+      "percentage": 18.6,
+      "confidence_score": 0.886,
+      "characteristics": {
+        "avg_search_frequency": 0.23870967741935478,
+        "avg_avg_session_duration": 148.31612903225806,
+        "avg_click_through_rate": 0.6360752688172043,
+        "avg_conversion_rate": 0.12270967741935483,
+        "avg_engagement_score": 0.32805591397849465,
+        "category_preferences": {
+          "sports": 1.0
+        },
+        "price_sensitivity": "low"
+      },
+      "top_search_queries": [
+        "protein powder",
+        "yoga mat",
+        "fitness equipment",
+        "running shoes"
+      ],
+      "insights": [
+        "Forte préférence pour sports",
+        "Peu sensible aux prix, potentiel pour produits premium"
+      ]
+    }
+  ],
+  "segment_comparison": {
+    "most_engaged_segment": "Tech Browsers",
+    "highest_converting_segment": "Tech Browsers",
+    "largest_segment": "Home Improvers",
+    "most_confident_segment": "Tech Browsers",
+    "engagement_variation": {
+      "min": 0.248,
+      "max": 0.368,
+      "std": 0.04
+    },
+    "conversion_variation": {
+      "min": 0.076,
+      "max": 0.16,
+      "std": 0.028
+    }
+  },
+  "recommendations": [
+    "Concentrer les efforts marketing sur 'Home Improvers' qui représente 22.0% des utilisateurs",
+    "Développer des produits premium pour 'Tech Browsers' avec un taux de conversion de 16.0%",
+    "Améliorer l'engagement du segment 'Tech Browsers' avec des campagnes de re-engagement ciblées",
+    "Mettre en place des programmes de fidélité et promotions pour les 1 segments sensibles aux prix"
+  ]
+}

@@ -1,0 +1,90 @@
+services:
+  # PostgreSQL
+  postgres:
+    image: postgres:15
+    container_name: ecommerce_postgres
+    environment:
+      POSTGRES_DB: coding_challenge_data
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Elasticsearch
+  elasticsearch:
+    image: elasticsearch:7.17.0
+    container_name: ecommerce_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ports:
+      - "9201:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: ecommerce_redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+
+  # Application principale
+  app:
+    build: .
+    container_name: ecommerce_app
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/coding_challenge_data
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - REDIS_URL=redis://redis:6379/0
+      - DJANGO_SETTINGS_MODULE=ecommerce_platform.settings
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - elasticsearch
+      - redis
+    volumes:
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+    command: >
+      sh -c "
+        echo 'Waiting for services...' &&
+        sleep 15 &&
+        python manage.py migrate &&
+        python manage.py generate_data --reset &&
+        echo 'Running analysis...' &&
+        cd sql-optimizer && python optimizer.py && cd .. &&
+        cd cohort-analyzer && python cohort_analysis.py && cd .. &&
+        cd elasticsearch-sync && python sync_service.py && cd .. &&
+        cd behavioral-segmentation && python ai_segmentation.py && cd .. &&
+        echo 'Starting Django server...' &&
+        python manage.py runserver 0.0.0.0:8000
+      "
+
+  # API Flask séparée
+  api:
+    build: .
+    container_name: ecommerce_api
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/coding_challenge_data
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - elasticsearch
+      - app
+    working_dir: /app/elasticsearch-sync
+    command: python api.py
+
+volumes:
+  postgres_data:
+  elasticsearch_data:
+  redis_data:
